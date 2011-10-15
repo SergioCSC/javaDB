@@ -7,7 +7,7 @@ USE `enotsdb` ;
 
 -- -----------------------------------------------------
 -- Table `enotsdb`.`applications`
--- -----------------------------------------------------
+-- -----------------------------------type_name------------------
 DROP TABLE IF EXISTS `enotsdb`.`applications` ;
 
 CREATE  TABLE IF NOT EXISTS `enotsdb`.`applications` (
@@ -54,7 +54,9 @@ CREATE  TABLE IF NOT EXISTS `enotsdb`.`applications_types` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-
+GRANT ALL PRIVILEGES  ON `enotsdb`.*
+TO 'enotsname'@'%' IDENTIFIED BY 'enotspass'
+WITH GRANT OPTION;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
